@@ -13,3 +13,17 @@ This installation is derived for the official Sentinel dVPN installation
 
 Here is my best practice installation: https://github.com/lightiv/SkyNet/wiki/Ubuntu-Linux-Install-Guide
 
+## Setup
+
+**Login As ROOT**
+
+Setup the core networking files:
+```
+sudo apt-get install autotools-dev -y && sudo apt-get install libtool-bin -y \ 
+&& sudo apt-get install libunbound-dev -y && sudo apt install wireguard -y && curl -y && unzip
+```
+Get HandShake DNS and the Sentinelnode binary
+```
+wget https://sentinel-files.s3.filebase.com/hnsd && mv hnsd /usr/bin/hnsd && chmod +x /usr/bin/hnsd && which hnsd
+wget https://sentinel-files.s3.filebase.com/sentinelnode && mv sentinelnode /usr/bin/sentinelnode && chmod +x /usr/bin/sentinelnode && which sentinelnode
+```
