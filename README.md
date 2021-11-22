@@ -114,8 +114,8 @@ sentinelnode keys add
 You can use the command line or Keplr to send the dvpn
 
 # Create Self-Signed Certificates
-Change the following in the statement below <DAYS>, <MONIKER>, <NAME_FOR>NODE>
+Change the following in the statement below <YEARS_AS_DAYS>, <MONIKER_>, <NAME_FOR>NODE>
 ```
-openssl req -new -newkey ec -pkeyopt ec_paramgen_curve:prime256v1 -x509 -sha256 -days <DAYS> -nodes -out /root/.sentinelnode/tls.crt -keyout /root/.sentinelnode/tls.key -subj "/C=US/ST=California/L=Los Angeles/O=<MONIKER>/CN=<NAME_FOR_NODE>"
+openssl req -new -newkey ec -pkeyopt ec_paramgen_curve:prime256v1 -x509 -sha256 -days <YEARS_AS_DAYS> -nodes -out /root/.sentinelnode/tls.crt -keyout /root/.sentinelnode/tls.key -subj "/C=US/ST=California/L=Los Angeles/O=<MONIKER>/CN=<NODE_NAME>"
 ```
 
