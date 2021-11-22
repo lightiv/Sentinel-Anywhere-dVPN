@@ -140,3 +140,40 @@ openssl req -new -newkey ec -pkeyopt ec_paramgen_curve:prime256v1 -x509 -sha256 
 ```
 sentinelnode start
 ```
+If the above starts without an error.  Stop and create the following service to start and stop the node
+
+Create start script.  You will include your keyring password so no user input is needed
+```
+nano .sentinelnode/start-dvpn.sh
+```
+Enter the following:
+```
+#!/bin/bash
+
+ehco <KEYRING_PASSPHASE> | sentinelnode start
+```
+```
+sudo nano /lib/systemd/system/dvpn.service
+```
+Add the following:
+```
+[Unit]
+Description=Sentinel dVPN Node
+After=network-online.target
+
+[Service]
+User=root
+ExecStart=/.sentinelnode/start-dvpn.sh
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target
+```
+```
+sudo systemctl enable dvpn
+```
+```
+sudo systemctl start dvpn
+```
