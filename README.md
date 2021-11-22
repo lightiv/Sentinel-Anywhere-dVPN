@@ -153,6 +153,15 @@ Enter the following:
 ehco <KEYRING_PASSPHASE> | sentinelnode start
 ```
 ```
+CTRL+O Enter
+```
+```
+CTRL+x
+```
+```
+chmod +x .sentinelnode/start-dvpn.sh
+```
+```
 sudo nano /lib/systemd/system/dvpn.service
 ```
 Add the following:
@@ -170,6 +179,12 @@ LimitNOFILE=4096
 
 [Install]
 WantedBy=multi-user.target
+```
+```
+CTRL+O Enter
+```
+```
+CTRL+x
 ```
 ```
 sudo systemctl enable dvpn
