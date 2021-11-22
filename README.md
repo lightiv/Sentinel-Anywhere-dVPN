@@ -89,12 +89,24 @@ Reboot system and login as **root**
 ```
 reboot -d 0
 ```
+See what is running on port 53:
+```
+sudo lsof -i :53
+```
 If port 53 is still in use -> "systemd-r     886 systemd-resolve   13u  IPv4     22076      0t0  TCP 127.0.0.53:53 (LISTEN)"
 ```
 sudo systemctl disable systemd-resolved
 ```
 ```
 sudo systemctl stop systemd-resolved
+```
+Stop and disable unbound if using port 53
+```
+systemctl stop unbound && systemctl disable unbound
+```
+See what is running on port 53:
+```
+sudo lsof -i :53
 ```
 # Initialize config.toml and wiregard.toml
 
