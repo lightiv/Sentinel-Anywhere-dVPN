@@ -1,5 +1,5 @@
-# Sentinel dVPN
-Sentinel dVPN Anywhere Exit Node
+# Sentinel Anywhere dVPN
+Sentinel Anywhere dVPN Exit Node
 
 ## Introduction
 
