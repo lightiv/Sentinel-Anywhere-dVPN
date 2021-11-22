@@ -9,7 +9,7 @@ This project was created to easily configure and deploy a Sentinel dVPN exit nod
 
 This installation is derived for the official Sentinel dVPN installation
 
-## Install a frest installation of Unbuntu Linux
+## Install a fresh installation of Unbuntu Linux
 
 Here is my best practice installation: https://github.com/lightiv/SkyNet/wiki/Ubuntu-Linux-Install-Guide
 
