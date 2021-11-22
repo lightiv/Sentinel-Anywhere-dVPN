@@ -19,14 +19,14 @@ Here is my best practice installation: https://github.com/lightiv/SkyNet/wiki/Ub
 
 Setup the core networking files:
 ```
-sudo apt-get install autotools-dev -y && sudo apt-get install libtool-bin -y && sudo apt-get install libunbound-dev -y && sudo apt install wireguard -y && unzip
+sudo apt-get install autotools-dev -y && sudo apt-get install libtool-bin -y && sudo apt-get install unbound -y && sudo apt-get install libunbound-dev -y && sudo apt install wireguard -y && unzip
 ```
 Get HandShake DNS and the Sentinelnode binary
 ```
-wget https://sentinel-files.s3.filebase.com/hnsd && mv hnsd /usr/bin/hnsd && chmod +x /usr/bin/hnsd && which hnsd
+wget https://sentinel-files.s3.filebase.com/hnsd && mv hnsd /usr/local/bin/hnsd && chmod +x /usr/local/bin/hnsd && which hnsd
 ```
 ```
-wget https://sentinel-files.s3.filebase.com/sentinelnode && mv sentinelnode /usr/bin/sentinelnode && chmod +x /usr/bin/sentinelnode && which sentinelnode
+wget https://sentinel-files.s3.filebase.com/sentinelnode && mv sentinelnode /usr/local/bin/sentinelnode && chmod +x /usr/local/bin/sentinelnode && which sentinelnode
 ```
 ## Configure for hnsd and clear port 53 for hnsd use
 ```
@@ -59,7 +59,7 @@ nano /etc/dhcpcd.conf
 ```
 Add the following:
 ```
-option dVPN-node
+option host_name
 ```
 NetworkManager has similar behavior to dhcpcd. To prevent it from changing your resolv.conf:
 ```
@@ -122,4 +122,9 @@ openssl req -new -newkey ec -pkeyopt ec_paramgen_curve:prime256v1 -x509 -sha256 
 For example.  This sets the cert expiration to 10 years.:
 ```
 openssl req -new -newkey ec -pkeyopt ec_paramgen_curve:prime256v1 -x509 -sha256 -days 3650 -nodes -out .sentinelnode/tls.crt -keyout .sentinelnode/tls.key -subj "/C=US/ST=California/L=Los Angeles/O=SkyNet | Validators/CN=Sentinel dVPN Node"
+```
+
+# Start Sentinel dVPN Anywhere Node
+```
+sentinelnode start
 ```
