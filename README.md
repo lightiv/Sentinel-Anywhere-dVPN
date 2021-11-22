@@ -192,3 +192,7 @@ sudo systemctl enable dvpn
 ```
 sudo systemctl start dvpn
 ```
+View the status of your node
+```
+sudo journalctl --no-hostname -fu dvpn
+```
