@@ -1,3 +1,4 @@
+![SkyNet | Validators](https://skynet-images.s3.filebase.com/SkyNet%20Validators%20Logo%20-%20White.png)
 # Sentinel Anywhere dVPN
 Sentinel Anywhere dVPN Exit Node
 
